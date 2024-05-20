@@ -10,3 +10,11 @@
     (click)="onCreateServer()">Add server</button>
 <p *ngIf="serverCreated">Server was created. Server name is {{ serverName }}</p>
 <app-server *ngFor="let server of servers"></app-server>
+<hr>
+<button (click)="onToggleButtonClick()" class="btn btn-primary">Display Details</button>
+<p *ngIf="showPassword">Secret Password = tuna</p>
+<h3>History</h3>
+<p 
+    *ngFor="let entry of buttonClickHistory"
+    [ngStyle]="{ backgroundColor: getBackgroundColor(buttonClickHistory.indexOf(entry)) }"
+    [ngClass]="{ 'after-fifth': buttonClickHistory.indexOf(entry) >= 4 }">{{ entry }}</p>
