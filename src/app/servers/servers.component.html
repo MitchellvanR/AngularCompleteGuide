@@ -12,3 +12,14 @@
 <p>{{ serverCreationStatus }}</p>
 <app-server></app-server>
 <app-server></app-server>
+<hr>
+<label>Username</label>
+<input 
+    type="text"
+    class="form-control"
+    [(ngModel)]="username">
+<p>{{ username }}</p>
+<button
+    class="btn btn-primary"
+    [disabled]="!checkAllowReset()"
+    (click)="onReset()">Reset</button>
